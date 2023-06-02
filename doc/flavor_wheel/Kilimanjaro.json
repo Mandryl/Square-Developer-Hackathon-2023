@@ -1,0 +1,11 @@
+{
+    "fruity":["lemon", "orange", "strawberry", "blueberry", "raspberry", "lime zest"],
+    "floral":["tea", "jasmine tea", "chamomile tea", "lavender", "rose"],
+    "sweet":[],
+    "nutty":[],
+    "spices":[],
+    "roasted":[],
+    "sour":["lively sourness"],
+    "green":["herbal aroma", "brewed herbal tea"],
+    "other":["earthy aroma"]
+}

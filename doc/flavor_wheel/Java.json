@@ -1,0 +1,16 @@
+{
+    "fruity":["ripe red apple", "blackberry"],
+    "floral":[],
+    "sweet":[
+        "dark chocolate", "velvety custard", "caramelized sugar","brewed cup of hot chocolate"
+    ],
+    "nutty":["nutty", "roasted almond","cocoa"],
+    "spices":["clove","nutmeg"],
+    "roasted":[],
+    "sour":[],
+    "green":[],
+    "other":[
+        "earthy flavor", "earthy characteristics", 
+        "woody", "cut cedar wood", "damp forest soil"
+    ]
+}

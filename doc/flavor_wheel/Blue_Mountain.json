@@ -1,0 +1,14 @@
+{
+    "fruity":["lemon", "grapefruit", "ripe strawberries", "mangoes", "tropical fruit"],
+    "floral":[
+        "jasmine flower", "jasmine tea", "gentle floral", 
+        "honeysuckle", "lavender", "blooming flowers"
+    ],
+    "sweet":[],
+    "nutty":["nutty", "almond", "macadamia nuts", "butter"],
+    "spices":["subtle spicy aroma", "clove", "cinnamon"],
+    "roasted":[],
+    "sour":[],
+    "green":[],
+    "other":[]
+}

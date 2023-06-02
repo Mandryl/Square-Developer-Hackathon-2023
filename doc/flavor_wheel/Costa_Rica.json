@@ -1,0 +1,11 @@
+{
+    "fruity":["orange", "grapefruits", "green apple"],
+    "floral":["orange blossom", "jasmine flower"],
+    "sweet":["caramel", "baked cookies", "subtle chocolatey aroma", "chocolate truffles"],
+    "nutty":["nutty", "roasted almond", "cashew nuts", "pecan", "cocoa"],
+    "spices":[],
+    "roasted":[],
+    "sour":[],
+    "green":[],
+    "other":[]
+}

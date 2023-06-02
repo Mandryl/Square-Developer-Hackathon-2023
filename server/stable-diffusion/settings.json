@@ -1,0 +1,125 @@
+{
+    "positive_prompt":{
+        "style": [
+            "photograph",
+            "color photo",
+            "4k resolution",
+            "realistic",
+            "f3.6",
+            "nature",
+            "wooden",
+            "moody",
+            "flickr",
+            "instagram"
+        ],
+        "feeling":[
+            "beautiful",
+            "calm",
+            "chill",
+            "chilled",
+            "tasty",
+            "yummy",
+            "fragrant",
+            "aromatic"
+        ],
+        "situation":[
+            "cooking",
+            "dish",
+            "meal",
+            "food",
+            "drink",
+            "coffee",
+            "cafe"
+        ]
+    },
+    "negative_prompt":{
+        "text":[
+            "text",
+            "signature",
+            "username",
+            "artist name",
+            "watermark",
+            "stamp",
+            "title"
+        ],
+        "style": [
+            "flat color", 
+            "flat shading",
+            "oil painting", 
+            "sketch", 
+            "watercolor", 
+            "illustration",
+            "trypophobia",
+            "too dark",
+            "too sharp"
+        ],
+        "quality": [
+            "low res",
+            "low quality", 
+            "worst quality", 
+            "out of focus", 
+            "ugly",
+            "error", 
+            "jpeg artifacts", 
+            "lowers", 
+            "blurry", 
+            "bokeh"
+        ],
+        "object":[
+            "funiture",
+            "sofa",
+            "sheet",
+            "cushion",
+            "lamp",
+            "floor lamp",
+            "knife",
+            "kitchen knife",
+            "building",
+            "house",
+            "warehouse",
+            "skyscraper",
+            "bathroom",
+            "restroom",
+            "toilet",
+            "portable toilet",
+            "portaloo",
+            "tent",
+            "cane",
+            "stick",
+            "walking stick",
+            "asian food",
+            "korean food",
+            "chinese food",
+            "japanese food",
+            "lighthouse",
+            "clock",
+            "watch"
+        ],
+        "human":[
+            "human",
+            "human being",
+            "man",
+            "woman",
+            "male",
+            "female"
+        ]
+    },
+    "seeds":[
+        3872611330,
+        3761955933,
+        213175768,
+        1493892012,
+        1272805630,
+        3253048037,
+        168550843,
+        3543313545,
+        2095637349,
+        1778211599,
+        3970408065,
+        3754813825,
+        4156634319,
+        911150712,
+        4130810265,
+        630856365
+    ]
+}

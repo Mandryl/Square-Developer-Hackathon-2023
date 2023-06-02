@@ -1,0 +1,11 @@
+{
+    "fruity":["lemon", "orange"],
+    "floral":["jasmine"],
+    "sweet":["dark chocolate","bittersweet", "caramelized sugar", "caramel sauce"],
+    "nutty":["nutty","roasted almond","walnuts", "hazelnuts"],
+    "spices":["cinnamon", "nutmeg"],
+    "roasted":[],
+    "sour":["lively sourness"],
+    "green":[],
+    "other":["fresh soil", "damp leaves"]
+}

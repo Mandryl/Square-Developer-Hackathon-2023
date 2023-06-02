@@ -1,0 +1,11 @@
+{
+    "fruity":["lemon", "orange"],
+    "floral":["jasmine", "rose"],
+    "sweet":["toasted marshmallows", "caramel", "brown sugar", "dark chocolate"],
+    "nutty":["nutty", "toasted almond", "hazelnuts", "pecan"],
+    "spices":[],
+    "roasted":[],
+    "sour":["lively sourness"],
+    "green":[],
+    "other":["harmonious balance"]
+}

@@ -1,0 +1,13 @@
+{
+    "fruity":["ripe peaches", "tangerine", "tropical fruits", "pineapple"],
+    "floral":["fresh lilacs", "hibiscus flowers"],
+    "sweet":["velvety smoothness", "high-quality caramel", "baked caramelized pastries", "caramel"],
+    "nutty":[
+        "nutty", "toasted macadamia nuts", "caramelized almonds",
+        "toasted hazelnuts", "roasted pecans"],
+    "spices":[],
+    "roasted":[],
+    "sour":[],
+    "green":[],
+    "other":[]
+}
