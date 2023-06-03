@@ -1,7 +1,11 @@
 const axios = require("axios");
 const logger = require("../common/logger");
 const fs = require("fs");
-const errorImg = fs.readFileSync("./error-icon.png",{ encoding: "base64" });
+const path = require("path");
+const errorImg = fs.readFileSync(
+    path.resolve(__dirname, "./error-icon.png"),
+    { encoding: "base64" }
+);
 const shuffle = require('shuffle-array');
 
 const settings = require("./settings.json");
