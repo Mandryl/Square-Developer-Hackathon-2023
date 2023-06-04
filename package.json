@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
+    "serve": "vite build && nodemon server/app.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
