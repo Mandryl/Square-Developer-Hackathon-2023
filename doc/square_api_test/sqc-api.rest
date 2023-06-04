@@ -1,0 +1,70 @@
+# Square Custom API Documentation
+
+## Base URL
+@baseUrl = http://localhost:8001/api
+
+### Fetch Locations
+GET {{baseUrl}}/locations HTTP/1.1
+
+### Fetch Catalog Objects
+GET {{baseUrl}}/catalog/objects HTTP/1.1
+
+### Fetch Catalog Objects by Type (e.g., CATEGORY, CUSTOM_ATTRIBUTE_DEFINITION)
+GET {{baseUrl}}/catalog/objects?type=ITEM HTTP/1.1
+
+### Fetch Catalog ItemsAndImages by Categories (e.g., CoffeeBean)
+GET {{baseUrl}}/catalog/items?category=CoffeeBean HTTP/1.1
+
+### Fetch Orders by Status (e.g., OPEN, COMPLETED)
+GET {{baseUrl}}/orders?status=OPEN HTTP/1.1
+
+### Create Order
+POST {{baseUrl}}/orders HTTP/1.1
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "itemId": "H6HCSQUWKMM2KQUN6N2RX5I4",
+      "itemVarId": "X5V2CMLO2LBRJWUO2UMYY5XN",
+      "itemQuantity": 50
+    },
+    {
+      "itemId": "GEFRBCLMAAFJYDZCQ6FSVU5X",
+      "itemVarId": "2QH3PDV4MBPT6E7FJAXC5S6X",
+      "itemQuantity": 150
+    },
+    {
+      "itemId": "RPJPPUKXVCK4UQAIO73D6GJR",
+      "itemVarId": "46YDU63HSCQWSODSLCP46UDR",
+      "itemQuantity": 100
+    }
+  ],
+  "note": "This is a sample order."
+}
+
+### Cancel Order
+PUT {{baseUrl}}/orders/qt1eXz6lo5OOyfEFHYzXZzZvWmEZY/cancel HTTP/1.1
+Content-Type: application/json
+
+### Fetch Payments by Status (e.g., PENDING, COMPLETED)
+GET {{baseUrl}}/payments?status=COMPLETED HTTP/1.1
+
+### Create Payment with Cash
+POST {{baseUrl}}/payments HTTP/1.1
+Content-Type: application/json
+
+{
+  "orderId": "qt1eXz6lo5OOyfEFHYzXZzZvWmEZY",
+  "token": "CASH",
+  "buyerSuppliedAmount": 10000,
+}
+
+### Create Payment with Card
+POST {{baseUrl}}/payments HTTP/1.1
+Content-Type: application/json
+
+{
+  "orderId": "SJ1k7fP1j06gAM3XV0PK1hbnMWQZY",
+  "token": "cnon:card-nonce-ok"
+}

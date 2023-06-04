@@ -17,7 +17,7 @@ const auth = new Authenticate(basicID,basicPass);
 app.use(auth.initialize());
 app.use(
     "/",
-    auth.authenticate(),
+    // auth.authenticate(),
     express.static(path.join(__dirname, "../dist"))
 );
 app.use("/api", api);
