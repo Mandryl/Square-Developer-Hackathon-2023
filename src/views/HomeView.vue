@@ -2,7 +2,6 @@
 import { ref, reactive, onMounted, computed } from 'vue'
 import axios from 'axios'
 import { ArrowRight, Money } from '@element-plus/icons-vue'
-import sampleData from './test.json'
 
 let catalogItems = ref([])
 let state = reactive({
