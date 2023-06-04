@@ -1,0 +1,92 @@
+{
+  "#Flavor-Wheel-Fruity": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Fruity",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Fruity",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Fruity"
+    }
+  },
+  "#Flavor-Wheel-Floral": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Floral",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Floral",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Floral"
+    }
+  },
+  "#Flavor-Wheel-Sweet": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Sweet",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Sweet",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Sweet"
+    }
+  },
+  "#Flavor-Wheel-Nutty": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Nutty",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Nutty",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Nutty"
+    }
+  },
+  "#Flavor-Wheel-Spices": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Spices",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Spices",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Spices"
+    }
+  },
+  "#Flavor-Wheel-Roasted": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Roasted",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Roasted",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Roasted"
+    }
+  },
+  "#Flavor-Wheel-Sour": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Sour",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Sour",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Sour"
+    }
+  },
+  "#Flavor-Wheel-Green": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Green",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Green",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Green"
+    }
+  },
+  "#Flavor-Wheel-Other": {
+    "type": "CUSTOM_ATTRIBUTE_DEFINITION",
+    "id": "#Flavor-Wheel-Other",
+    "customAttributeDefinitionData": {
+      "type": "STRING",
+      "name": "Flavor-Wheel-Other",
+      "allowedObjectTypes": ["ITEM", "ITEM_VARIATION"],
+      "key": "Flavor-Wheel-Other"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+File: Blue_Mountain.json
+"floral": "jasmine flower, jasmine tea, gentle floral, honeysuckle, lavender, blooming flowers"
+"fruity": "lemon, grapefruit, ripe strawberries, mangoes, tropical fruit"
+"green": ""
+"nutty": "nutty, almond, macadamia nuts, butter"
+"other": ""
+"roasted": ""
+"sour": ""
+"spices": "subtle spicy aroma, clove, cinnamon"
+"sweet": ""
+
+File: Colombia.json
+"floral": "jasmine, rose"
+"fruity": "lemon, orange"
+"green": ""
+"nutty": "nutty, toasted almond, hazelnuts, pecan"
+"other": "harmonious balance"
+"roasted": ""
+"sour": "lively sourness"
+"spices": ""
+"sweet": "toasted marshmallows, caramel, brown sugar, dark chocolate"
+
+File: Costa_Rica.json
+"floral": "orange blossom, jasmine flower"
+"fruity": "orange, grapefruits, green apple"
+"green": ""
+"nutty": "nutty, roasted almond, cashew nuts, pecan, cocoa"
+"other": ""
+"roasted": ""
+"sour": ""
+"spices": ""
+"sweet": "caramel, baked cookies, subtle chocolatey aroma, chocolate truffles"
+
+File: Guatemala.json
+"floral": "jasmine"
+"fruity": "lemon, orange"
+"green": ""
+"nutty": "nutty, roasted almond, walnuts, hazelnuts"
+"other": "fresh soil, damp leaves"
+"roasted": ""
+"sour": "lively sourness"
+"spices": "cinnamon, nutmeg"
+"sweet": "dark chocolate, bittersweet, caramelized sugar, caramel sauce"
+
+File: Hawaii_Kona.json
+"floral": "fresh lilacs, hibiscus flowers"
+"fruity": "ripe peaches, tangerine, tropical fruits, pineapple"
+"green": ""
+"nutty": "nutty, toasted macadamia nuts, caramelized almonds, toasted hazelnuts, roasted pecans"
+"other": ""
+"roasted": ""
+"sour": ""
+"spices": ""
+"sweet": "velvety smoothness, high-quality caramel, baked caramelized pastries, caramel"
+
+File: Java.json
+"floral": ""
+"fruity": "ripe red apple, blackberry"
+"green": ""
+"nutty": "nutty, roasted almond, cocoa"
+"other": "earthy flavor, earthy characteristics, woody, cut cedar wood, damp forest soil"
+"roasted": ""
+"sour": ""
+"spices": "clove, nutmeg"
+"sweet": "dark chocolate, velvety custard, caramelized sugar, brewed cup of hot chocolate"
+
+File: Kilimanjaro.json
+"floral": "tea, jasmine tea, chamomile tea, lavender, rose"
+"fruity": "lemon, orange, strawberry, blueberry, raspberry, lime zest"
+"green": "herbal aroma, brewed herbal tea"
+"nutty": ""
+"other": "earthy aroma"
+"roasted": ""
+"sour": "lively sourness"
+"spices": ""
+"sweet": ""
+

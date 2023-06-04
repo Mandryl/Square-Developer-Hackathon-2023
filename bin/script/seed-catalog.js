@@ -29,7 +29,7 @@ const config = {
   environment: Environment.Sandbox,
   accessToken: process.env.SQUARE_ACCESS_TOKEN
 };
-const { catalogApi, locationsApi, customerCustomAttributesApi } = new Client(config);
+const { catalogApi, locationsApi } = new Client(config);
 
 /*
  * Given an object with image data and a corresponding catalogObjectId,

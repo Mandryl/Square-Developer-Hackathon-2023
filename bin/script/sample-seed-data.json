@@ -57,8 +57,8 @@
               "itemId": "#BlueMountain Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 25,
-                "currency": "JPY"
+                "amount": 0.18,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
@@ -96,8 +96,8 @@
               "itemId": "#Colombia Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 3,
-                "currency": "JPY"
+                "amount": 0.02,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
@@ -134,8 +134,8 @@
               "itemId": "#Costa Rica Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 5,
-                "currency": "JPY"
+                "amount": 0.36,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
@@ -173,8 +173,8 @@
               "itemId": "#Guatemala Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 9,
-                "currency": "JPY"
+                "amount": 0.64,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
@@ -211,8 +211,8 @@
               "itemId": "#Hawaii Kona Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 18,
-                "currency": "JPY"
+                "amount": 0.13,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
@@ -249,8 +249,8 @@
               "itemId": "#Java Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 6,
-                "currency": "JPY"
+                "amount": 0.04,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
@@ -287,8 +287,8 @@
               "itemId": "#Kilimanjaro Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 7,
-                "currency": "JPY"
+                "amount": 0.05,
+                "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
             },
