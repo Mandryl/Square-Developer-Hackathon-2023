@@ -1,85 +1,43 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <el-container>
+    <el-header>
+      <div class="header-wrapper">
+        <img class="header-img" src="@/assets/coffee-bean.svg">
+        <h3 class="header-title" style="display: flex;">Cofee Blender</h3>
+      </div>
+    </el-header>
+    <RouterView />
+  </el-container>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style>
+.header-wrapper{
+  height:100%;
+  display: flex;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.header-img{
+  height: 2rem;
+  display: flex;
+  margin: auto 10px auto 0px;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.header-title{
+  display: flex;
+  margin: auto 0;
 }
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.active-bread .el-breadcrumb__inner{
+  font-weight: bold!important;
+  color:#409EFF!important;
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.non-active-bread .el-breadcrumb__inner{
+  font-weight: lighter!important;
+  color:#C0C4CC!important;
 }
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.el-badge__content.is-fixed{
+  right: 0!important;
+  transform: translateY(-50%) translate(0%)!important;
 }
 </style>
