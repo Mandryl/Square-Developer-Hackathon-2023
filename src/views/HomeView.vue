@@ -1,42 +1,49 @@
 <script setup>
 import { ref, reactive, onMounted, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { ArrowRight, Money } from '@element-plus/icons-vue'
+
+const router = useRouter();
 
 let catalogItems = ref([])
 let state = reactive({
   selectedItems: [],
   error: null,
   loading: false
-})
+});
 
 let cardOnclick = (itemId) => {
   if (state.selectedItems.includes(itemId)) {
-    state.selectedItems = state.selectedItems.filter((id) => id !== itemId)
+    state.selectedItems = state.selectedItems.filter((id) => id !== itemId);
   } else {
-    state.selectedItems.push(itemId)
+    state.selectedItems.push(itemId);
   }
 }
-let isItemSelected = (id) => computed(() => state.selectedItems.includes(id))
-let hasSelectedItems = computed(() => state.selectedItems && state.selectedItems.length > 0)
+let isItemSelected = (id) => computed(() => state.selectedItems.includes(id));
+let hasSelectedItems = computed(() => state.selectedItems && state.selectedItems.length > 0);
+
+const nextStep = () => {
+  router.push("/blend-ratio");
+}
 
 const fetchCatalogItems = async () => {
-  state.loading = true
+  state.loading = true;
   try {
     const response = await axios.get('/api/catalog/items', {
       params: {
         category: 'CoffeeBean'
       }
-    })
+    });
 
     if (response.status === 200) {
-      catalogItems.value = response.data
+      catalogItems.value = response.data;
     }
   } catch (error) {
-    console.error(error)
-    state.error = error.message
+    console.error(error);
+    state.error = error.message;
   } finally {
-    state.loading = false
+    state.loading = false;
   }
 }
 
@@ -106,7 +113,8 @@ onMounted(fetchCatalogItems)
         :icon="ArrowRight"
         type="primary"
         size="large"
-        :disabled="hasSelectedItems"
+        :disabled="!hasSelectedItems"
+        @click="nextStep()"
         >Next Step</el-button
       >
     </el-footer>

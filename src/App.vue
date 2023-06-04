@@ -40,4 +40,7 @@ import { RouterLink, RouterView } from 'vue-router'
   right: 0!important;
   transform: translateY(-50%) translate(0%)!important;
 }
+.amount .el-statistic__head{
+    font-size:15px!important
+}
 </style>
