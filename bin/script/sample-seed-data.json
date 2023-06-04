@@ -1,0 +1,310 @@
+{
+  "#Grams Unit": {
+    "data": {
+      "id": "#Grams Unit",
+      "measurementUnitData": {
+        "measurementUnit": {
+          "weightUnit": "METRIC_GRAM"
+        },
+        "precision": 2
+      },
+      "presentAtAllLocations": true,
+      "type": "MEASUREMENT_UNIT"
+    }
+  },
+  "#Sales Tax": {
+    "data": {
+      "id": "#Sales Tax",
+      "isDeleted": false,
+      "presentAtAllLocations": true,
+      "taxData": {
+        "appliesToCustomAmounts": true,
+        "calculationPhase": "TAX_TOTAL_PHASE",
+        "enabled": true,
+        "inclusionType": "ADDITIVE",
+        "name": "Sales Tax",
+        "percentage": "8.5"
+      },
+      "type": "TAX"
+    }
+  },
+  "#CoffeeBean Category": {
+    "data": {
+      "categoryData": {
+        "name": "CoffeeBean"
+      },
+      "id": "#CoffeeBean Category",
+      "presentAtAllLocations": true,
+      "type": "CATEGORY"
+    }
+  },
+  "#BlueMountain Coffee Bean": {
+    "data": {
+      "id": "#BlueMountain Coffee Bean",
+      "itemData": {
+        "abbreviation": "BM",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Jamaican Blue Mountain coffee is regarded for it’s balanced and smooth taste, bright and clean acidity, and almost total lack of bitterness. Despite the high acidity, the coffee also has a full body, which makes for an extremely unusual combination that results in a coffee that is rich and creamy as well as bright and zesty.",
+        "name": "Blue Mountain",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular BlueMountain Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#BlueMountain Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 25,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Blue Mountain coffee beans.",
+      "id": "#BlueMountain Coffee Bean",
+      "url": "./bin/script/img/Blue_Mountain.png"
+    }
+  },
+  
+  "#Colombia Coffee Bean": {
+    "data": {
+      "id": "#Colombia Coffee Bean",
+      "itemData": {
+        "abbreviation": "CB",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Colombian coffee is characterised by its mellow sweetness, soft bitterness, full body and rich fruity taste, and is a well-balanced, mild coffee with no prominent acidity. It is easy to use as a base for blending and can be enjoyed in a variety of ways.",
+        "name": "Colombia",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular Colombia Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#Colombia Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 3,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Colombia coffee beans.",
+      "id": "#Colombia Coffee Bean",
+      "url": "./bin/script/img/Colombia.png"
+    }
+  },
+  "#Costa Rica Coffee Bean": {
+    "data": {
+      "id": "#Costa Rica Coffee Bean",
+      "itemData": {
+        "abbreviation": "CR",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Costa Rican coffee is characterised by its intense sweetness and deep, full-bodied flavour, due to a special process that concentrates the sugar content. It has an elegant acidity, moderate bitterness and a balanced sweet taste.",
+        "name": "Costa Rica",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular Costa Rica Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#Costa Rica Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 5,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Costa Rica coffee beans.",
+      "id": "#Costa Rica Coffee Bean",
+      "url": "./bin/script/img/Costa_Rica.png"
+    }
+  },
+  
+  "#Guatemala Coffee Bean": {
+    "data": {
+      "id": "#Guatemala Coffee Bean",
+      "itemData": {
+        "abbreviation": "GT",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Guatemala has a slightly strong acidity reminiscent of fruit & a floral, aroma. One sip reveals a good balance of acidity and richness, with a sweet aroma escaping through the nose. Later on, a floral, honey-like sweetness emerges, which lingers for a long time.",
+        "name": "Guatemala",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular Guatemala Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#Guatemala Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 9,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Guatemala coffee beans.",
+      "id": "#Guatemala Coffee Bean",
+      "url": "./bin/script/img/Guatemala.png"
+    }
+  },
+  "#Hawaii Kona Coffee Bean": {
+    "data": {
+      "id": "#Hawaii Kona Coffee Bean",
+      "itemData": {
+        "abbreviation": "HK",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Kona coffee is characterised by soft acidity and smooth taste. It is characterised by low bitterness, soft acidity and a fruity-sweet aroma that evokes the original fruitiness of coffee. Rather than being full-bodied, it offers a refreshing aftertaste.",
+        "name": "Hawaii Kona",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular Hawaii Kona Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#Hawaii Kona Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 18,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Hawaii Kona coffee beans.",
+      "id": "#Hawaii Kona Coffee Bean",
+      "url": "./bin/script/img/Hawaii_Kona.png"
+    }
+  },
+  "#Java Coffee Bean": {
+    "data": {
+      "id": "#Java Coffee Bean",
+      "itemData": {
+        "abbreviation": "JV",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Java coffee is characterised by low acidity, slightly strong bitterness and fullness. It is used as a bitter accent in blended coffee. The coffee itself is very dark and has an austere appearance, but unlike its appearance, it is very mild and easy to drink. The aroma has a distinctive deep flavour.",
+        "name": "Java",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular Java Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#Java Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 6,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Java coffee beans.",
+      "id": "#Java Coffee Bean",
+      "url": "./bin/script/img/Java.png"
+    }
+  },
+  "#Kilimanjaro Coffee Bean": {
+    "data": {
+      "id": "#Kilimanjaro Coffee Bean",
+      "itemData": {
+        "abbreviation": "KJ",
+        "categoryId": "#CoffeeBean Category",
+        "description": "Kilimanjaro coffee is characterised by its strong acidity and crisp taste. The coffee does not have a strong bitterness and is full-bodied, yet light and easy to drink. It is often described as having a \"wild taste reminiscent of the African lands\". It is also highly regarded for its aroma, with a sweet and floral aroma even in bean form.",
+        "name": "Kilimanjaro",
+        "taxIds": [
+          "#Sales Tax"
+        ],
+        "variations": [
+          {
+            "id": "#Regular Kilimanjaro Coffee Bean",
+            "isDeleted": false,
+            "itemVariationData": {
+              "itemId": "#Kilimanjaro Coffee Bean",
+              "name": "Reguler",
+              "priceMoney": {
+                "amount": 7,
+                "currency": "JPY"
+              },
+              "pricingType": "FIXED_PRICING"
+            },
+            "measurementUnitId": "#Grams Unit",
+            "presentAtAllLocations": true,
+            "type": "ITEM_VARIATION"
+          }
+        ]
+      },
+      "presentAtAllLocations": true,
+      "type": "ITEM"
+    },
+    "image": {
+      "caption": "A picture of Kilimanjaro coffee beans.",
+      "id": "#Kilimanjaro Coffee Bean",
+      "url": "./bin/script/img/Kilimanjaro.png"
+    }
+  }
+}
