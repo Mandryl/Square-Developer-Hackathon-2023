@@ -94,6 +94,10 @@ const chartOptions = {
 };
 
 const goBack = () => { router.push("/"); };
+const order = () => { 
+    coffeeStore.updateSelected(selected);
+    router.push("/order"); 
+};
 </script>
 
 <template>
@@ -193,7 +197,8 @@ const goBack = () => { router.push("/"); };
         <el-button  
         style="width:60vw" 
         :icon="ShoppingCart" type="primary" size="large" 
-        :disabled="!itemSelected">
+        :disabled="!itemSelected"
+        @click="order()">
             Order
         </el-button>
     </el-footer>

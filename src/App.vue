@@ -7,7 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <el-header>
       <div class="header-wrapper">
         <img class="header-img" src="@/assets/coffee-bean.svg">
-        <h3 class="header-title" style="display: flex;">Cofee Blender</h3>
+        <h3 class="header-title" style="display: flex;">Bean Craft Laboratory</h3>
       </div>
     </el-header>
     <RouterView />
