@@ -51,15 +51,17 @@ const evaluate = async () => {
   showAIComment.value = true
   loadGPT.value = true
 
-  const data = selected.map((item) => {
-    return {
-      bean: {
-        name: item.name,
-        feature: item.feature
-      },
-      ratio: item.num / weight.value
-    }
-  })
+  const data = selected
+    .filter((item) => item.num > 0)
+    .map((item) => {
+      return {
+        bean: {
+          name: item.name,
+          feature: item.feature
+        },
+        ratio: item.num / weight.value
+      }
+    })
 
   const gpt = axios
     .post('/api/generateDesc', {
@@ -210,7 +212,12 @@ const createOrder = async () => {
         <el-text style="word-break: break-word"> Evaluating this blend ... </el-text>
       </div>
     </el-row>
-    <el-row v-loading="loadGPT" class="ai-row" style="margin-top: 0">
+    <el-row
+      v-loading="loadGPT"
+      element-loading-text="AI is processing"
+      class="ai-row"
+      style="margin-top: 0"
+    >
       <div v-if="showGAI">
         <el-avatar class="ai-avatar" :src="robotSVG" />
       </div>
