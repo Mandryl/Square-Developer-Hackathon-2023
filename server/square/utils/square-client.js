@@ -21,6 +21,8 @@ const {
   locationsApi,
   ordersApi,
   paymentsApi,
+  terminalApi,
+  devicesApi
 } = new Client(config);
 
 /**
@@ -59,5 +61,7 @@ module.exports = {
   locationsApi,
   paymentsApi,
   ordersApi,
+  terminalApi,
+  devicesApi,
   retrieveOrderAndLocation,
 };
