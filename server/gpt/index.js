@@ -14,8 +14,11 @@ exports.ask = async (prompt) => {
       model: "gpt-3.5-turbo",
       messages: [{role: "user", content: prompt}],
     }).catch( error => { logger.error("chat gpt completion failed"); });
-  }
 
-  const message = completion?.data?.choices?.[0]?.message?.content ?? "error";
-  return message;
+    const message = completion?.data?.choices?.[0]?.message?.content ?? "error";
+    return message;
+  }
+  else{
+    return "error";
+  }
 }

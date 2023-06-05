@@ -11,10 +11,13 @@ exports.generateImage = async (req, res) => {
 
     const prompt = sd.composeBasicPrompt();
     blendPrompts.forEach( bp => {
-        prompt.push({text: bp.prompt, weight: 1+bp.ratio});
+        prompt.push({text: bp.prompt, weight: 10*bp.ratio});
     });
 
     const seeds = sd.randomSeed(4);
+    console.log("seed,prompt");
+    console.log(seeds);
+    console.log(prompt);
     const requests = seeds.map( seed => sd.generate(seed, prompt));
 
     const base64 = await Promise.all(requests);

@@ -1,23 +1,78 @@
 <script setup>
-import { ref } from "vue";
+import { ref , computed} from "vue";
+import { useRouter } from 'vue-router'
+import { useCoffeeStore } from '../stores/coffeeStore'
 import { ArrowRight, ArrowLeft, ShoppingCart } from '@element-plus/icons-vue';
 import apexchart from "vue3-apexcharts";
+import axios from 'axios'
 import robotSVG from '@/assets/robot.svg';
 
-let value1 = ref(0);
-let value2 = ref(0);
+const router = useRouter();
+const coffeeStore = useCoffeeStore();
+let selected = coffeeStore.selected;
+selected.forEach(()=>{selected.num = 0});
 
-const series = [
-        {
-          name: "Blue Moutain",
-          data: [400],
-        },
-        {
-          name: "Hawaii Kona",
-          data: [700],
-        },
-      ];
+const itemSelected = computed(()=>selected.some(item => item.num > 0));
+const amount = computed(()=>selected.reduce(
+    (accumulator, currentValue) => accumulator + (currentValue.price)*(currentValue.num ?? 0.0), 0.0
+));
+const weight = computed(()=>selected.reduce(
+    (accumulator, currentValue) => accumulator + (currentValue.num ?? 0), 0
+));
 
+let blendText = ref("");
+let showAIComment = ref(false);
+let loadGPT = ref(false);
+let showGAI = ref(false);
+let gptDesc = ref("");
+let sdImages = ref([]);
+
+let firstEvaluate = false;
+const sleep = ms => new Promise(res => setTimeout(res, ms));
+const evaluate = async () => {
+    showGAI.value = false;
+    showAIComment.value = false;
+    if(firstEvaluate){
+        await sleep(500);
+    }else{
+        firstEvaluate = true;
+    }
+    blendText.value = selected.filter(item => item.num > 0).map(item => {
+        return `${item.name} ${item.num}g`;
+    }).join(", ");
+    showAIComment.value = true;
+    loadGPT.value = true;
+
+    const data = selected.map(item => {
+        return {
+            bean: {
+                name: item.name,
+                feature: item.feature,
+            },
+            ratio: item.num / weight
+        }
+    });
+
+    const gpt = axios.post("/api/generateDesc",{
+        blends:data
+    }).catch(e => console.log(e));
+    const sd = axios.post("/api/generateImage",{
+        blends:data
+    }).catch(e => console.log(e));
+    const promise = await Promise.all([gpt,sd]);
+
+    gptDesc.value = promise[0].data?.desc ?? "";
+    sdImages.value = promise?.[1]?.data?.base64 ?? []; 
+    loadGPT.value = false;
+    showGAI.value = true;
+};
+
+const series = computed(()=>selected.filter(item => item.num > 0).map(item => {
+    return {
+        name: item.name,
+        data: [item.num]
+    }
+}));
 const chartOptions = {
     chart: {
         id: "coffee-blend",
@@ -37,6 +92,8 @@ const chartOptions = {
     },
     tooltip: { enabled: false}
 };
+
+const goBack = () => { router.push("/"); };
 </script>
 
 <template>
@@ -47,7 +104,8 @@ const chartOptions = {
             <el-breadcrumb-item class="non-active-bread">Order</el-breadcrumb-item>
         </el-breadcrumb>
         <el-row>
-            <el-statistic class="amount" title="Total Amout" prefix="$" :value="268500" />
+            <el-statistic class="amount" title="Total Amout" prefix="$" :precision="2" :value="amount" />
+            <el-statistic class="amount" title="Total Weight" suffix="gram" :value="weight" />
         </el-row>
         <el-row>
             <div style="width:80vw; margin: 0 auto;">
@@ -60,21 +118,12 @@ const chartOptions = {
                 ></apexchart>
             </div>
         </el-row>
-        <el-row style="margin-bottom: 10px;">
+        <el-row v-for="item in selected" :key="item.name" style="margin-bottom: 10px;">
             <el-col :span="4">
-                <span class="ratio-title">Hawaii Kona</span>
+                <span class="ratio-title">{{ item.name }}</span>
             </el-col>
             <el-col :span="20" style="display: flex;">
-                <el-slider v-model="value1" :max="1000" show-input />
-                <el-text tag="b" style="margin-left:10px">[g]</el-text>
-            </el-col>
-        </el-row>
-        <el-row style="margin-bottom: 10px;">
-            <el-col :span="4">
-                <span class="ratio-title">Blue Mountain</span>
-            </el-col>
-            <el-col :span="20" style="display: flex;">
-                <el-slider v-model="value2" :max="1000" show-input />
+                <el-slider v-model="item.num" :max="500" show-input/>
                 <el-text tag="b" style="margin-left:10px">[g]</el-text>
             </el-col>
         </el-row>
@@ -86,21 +135,37 @@ const chartOptions = {
                     <el-text class="ai-intro">
                         Coffee AI predicts the taste and aroma of your blends, and describes them in text and images.
                     </el-text>
-                    <el-button class="ai-intro-btn" color="#a0cfff">Evaluate</el-button>
+                    <el-button class="ai-intro-btn" color="#a0cfff" :disabled="!itemSelected" @click="evaluate()" >
+                        Evaluate
+                    </el-button>
                 </div>
             </div>
         </el-row>
-        <el-row class="ai-row">
+        <el-row class="ai-row" v-if="showAIComment">
             <div>
                 <el-avatar class="ai-avatar" :src="robotSVG"/>
             </div>
             <div class="ai-bubble">
                 <el-text style="word-break: break-word;">
-                    This blend should have a rich, complex flavor with notes of chocolate and citrus. The aroma will be bold and earthy with a touch of sweetness. It will taste like a dark chocolate orange that has been dusted with cinnamon.
+                    {{blendText}}
+                </el-text>
+                <br />
+                <el-text style="word-break: break-word;">
+                    Evaluating this blend ...
                 </el-text>
             </div>
         </el-row>
-        <el-row class="ai-row" style="margin-top:0;">
+        <el-row v-loading="loadGPT" class="ai-row" style="margin-top:0;">
+            <div v-if="showGAI">
+                <el-avatar class="ai-avatar" :src="robotSVG"/>
+            </div>
+            <div v-if="showGAI" class="ai-bubble">
+                <el-text style="word-break: break-word;">
+                    {{ gptDesc }}
+                </el-text>
+            </div>
+        </el-row>
+        <el-row v-if="showGAI" class="ai-row" style="margin-top:0;">
             <div>
                 <el-avatar class="ai-avatar" :src="robotSVG"/>
             </div>
@@ -110,18 +175,27 @@ const chartOptions = {
                 </el-text>
             </div>
         </el-row>
-        <el-row>
+        <el-row v-if="showGAI">
             <div style="margin:0 auto">
-                <el-image style="height:150px;width:150px;margin:10px;" src="" fit="contain" />
-                <el-image style="height:150px;width:150px;margin:10px;" src="" fit="contain" />
-                <el-image style="height:150px;width:150px;margin:10px;" src="" fit="contain" />
-                <el-image style="height:150px;width:150px;margin:10px;" src="" fit="contain" />
+                <el-image class="sd-image" 
+                v-for="(image, index) in sdImages" :key="'image'+index" 
+                :src="'data:image/png;base64,'+image" fit="contain"/>
             </div>
         </el-row>
     </el-main>
     <el-footer class="btn-area">
-        <el-button  style="width:20vw" :icon="ArrowLeft" type="danger" size="large">Back</el-button>
-        <el-button  style="width:60vw" :icon="ShoppingCart" type="primary" size="large">Order</el-button>
+        <el-button  
+        style="width:20vw" 
+        :icon="ArrowLeft" type="danger" size="large"
+        @click="goBack()">
+            Back
+        </el-button>
+        <el-button  
+        style="width:60vw" 
+        :icon="ShoppingCart" type="primary" size="large" 
+        :disabled="!itemSelected">
+            Order
+        </el-button>
     </el-footer>
 </template>
 
@@ -162,5 +236,14 @@ const chartOptions = {
     display: block;
     margin: 0 auto;
     width: 100%;
+}
+.amount{
+    margin-right: 30px;
+}
+.sd-image{
+    height:150px;
+    width:150px;
+    margin:10px;
+    object-fit: contain;
 }
 </style>

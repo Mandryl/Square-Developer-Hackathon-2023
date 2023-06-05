@@ -1,10 +1,12 @@
 <script setup>
 import { ref, reactive, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useCoffeeStore } from '../stores/coffeeStore'
 import axios from 'axios'
 import { ArrowRight, Money } from '@element-plus/icons-vue'
 
 const router = useRouter();
+const coffeeStore = useCoffeeStore();
 
 let catalogItems = ref([])
 let state = reactive({
@@ -24,6 +26,25 @@ let isItemSelected = (id) => computed(() => state.selectedItems.includes(id));
 let hasSelectedItems = computed(() => state.selectedItems && state.selectedItems.length > 0);
 
 const nextStep = () => {
+  const selected = catalogItems.value.filter(item => 
+    state.selectedItems.includes(item.catalogItemObj.catalogItemObj.id)
+  ).map(item => {
+    const variation = item.catalogItemObj.catalogItemObj.itemData.variations[0];
+    const featureKeys = Object.keys(variation.customAttributeValues).filter(key => key.includes("Square:"));
+    const feature = {};
+    featureKeys.map(key => variation.customAttributeValues[key]).forEach(obj =>{
+      const customeAttrName = obj.name;
+      const customeAttrValue = obj.stringValue;
+      feature[customeAttrName] = customeAttrValue.split(",").map(v=>v.trim());
+    });
+    
+    return {
+      name: item.catalogItemObj.catalogItemObj.itemData.name,
+      price: variation.itemVariationData.priceMoney.amount / 100,
+      feature: feature
+    }
+  });
+  coffeeStore.updateSelected(selected);
   router.push("/blend-ratio");
 }
 
