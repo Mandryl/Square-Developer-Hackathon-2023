@@ -93,8 +93,8 @@ router.post(
 router.post(
   '/terminal/checkout',
   asyncHandler(async (req, res) => {
-    const { orderId, amount } = req.body
-    const checkout = await createTerminalCheckout(orderId, amount)
+    const { orderId, amountMoney } = req.body
+    const checkout = await createTerminalCheckout(orderId, amountMoney)
     res.status(200).json(JSON.parse(JSON.stringify(checkout, bigIntToString)))
   })
 )

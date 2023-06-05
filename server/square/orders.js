@@ -10,10 +10,7 @@ async function fetchOrderById(orderId) {
 
 // Fetch orders with optional status filter
 async function fetchOrders(statuses = []) {
-  const query = {
-    locationIds: [SQUARE_LOCATION_ID],
-  };
-
+  let query;
   if (statuses.length > 0) {
     query.query = {
       filter: {
