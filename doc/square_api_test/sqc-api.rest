@@ -25,23 +25,34 @@ Content-Type: application/json
 {
   "items": [
     {
-      "itemId": "H6HCSQUWKMM2KQUN6N2RX5I4",
-      "itemVarId": "X5V2CMLO2LBRJWUO2UMYY5XN",
+      "itemId": "R6V4JQNCKY5XLYBIJIKTB5LB",
+      "itemVarId": "QKF5UACTISTHEDNSRH77MWIQ",
       "itemQuantity": 50
     },
     {
-      "itemId": "GEFRBCLMAAFJYDZCQ6FSVU5X",
-      "itemVarId": "2QH3PDV4MBPT6E7FJAXC5S6X",
-      "itemQuantity": 150
+      "itemId": "E2U3QSQ77QWJD6PB2SUZ3EC3",
+      "itemVarId": "VOV4T24BSNMYZALO4URAFOOB",
+      "itemQuantity": 100
     },
     {
-      "itemId": "RPJPPUKXVCK4UQAIO73D6GJR",
-      "itemVarId": "46YDU63HSCQWSODSLCP46UDR",
-      "itemQuantity": 100
+      "itemId": "FK5RZ7OF5CEIXOP4VKYSF3WU",
+      "itemVarId": "KML46F6KYBPZCUTVPJEUGC2V",
+      "itemQuantity": 50
+    },
+    {
+      "itemId": "4HIWZDZ657I2BLGK324SSWOE",
+      "itemVarId": "PK4BZABE4TQG6TZGOPVEWUIF",
+      "itemQuantity": 50
+    },
+    {
+      "itemId": "RPUKACTMQCJ4IBBLWQVFJ3UL",
+      "itemVarId": "HHDBEQQMGSVLWYSKBN4ZJOVA",
+      "itemQuantity": 50
     }
   ],
-  "note": "This is a sample order."
+  "note": "This is a sample order for a selection of premium coffee beans. The order includes 50 grams of Blue Mountain coffee, 150 grams of Colombia coffee, and 100 grams of Hawaii Kona coffee. Each coffee bean variety offers a unique flavor profile and is carefully roasted to perfection. This order is perfect for coffee enthusiasts looking to explore different tastes and indulge in the finest quality beans. Enjoy the rich aroma and smooth flavors of these exceptional coffees!"
 }
+
 
 ### Cancel Order
 PUT {{baseUrl}}/orders/qt1eXz6lo5OOyfEFHYzXZzZvWmEZY/cancel HTTP/1.1

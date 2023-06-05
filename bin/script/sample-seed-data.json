@@ -134,7 +134,7 @@
               "itemId": "#Costa Rica Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 0.36,
+                "amount": 0.04,
                 "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
@@ -173,7 +173,7 @@
               "itemId": "#Guatemala Coffee Bean",
               "name": "Reguler",
               "priceMoney": {
-                "amount": 0.64,
+                "amount": 0.06,
                 "currency": "USD"
               },
               "pricingType": "FIXED_PRICING"
