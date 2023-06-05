@@ -45,7 +45,7 @@ const createCheckout = async () => {
 <template>
   <el-main
     style="height: 70vh"
-    v-loading.fullscreen.lock="loadCreateCheckout"
+    v-loading.lock="loadCreateCheckout"
     element-loading-text="Connecting Terminal..."
   >
     <el-breadcrumb :separator-icon="ArrowRight" style="margin-bottom: 15px">

@@ -146,7 +146,7 @@ const createOrder = async () => {
 
 <template>
   <el-main
-    v-loading.fullscreen.lock="loadCreateOrder"
+    v-loading.lock="loadCreateOrder"
     element-loading-text="Order is beeing processed."
   >
     <el-breadcrumb :separator-icon="ArrowRight" style="margin-bottom: 15px">
