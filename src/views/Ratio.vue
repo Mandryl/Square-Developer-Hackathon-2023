@@ -95,7 +95,14 @@ const chartOptions = {
 
 const goBack = () => { router.push("/"); };
 const order = () => { 
+    // id
+    selected[0].id;
+    // variation id
+    selected[0].variationId
+    //  make order
     coffeeStore.updateSelected(selected);
+    // store order
+    coffeeStore.updateSelected({});
     router.push("/order"); 
 };
 </script>

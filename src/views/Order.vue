@@ -12,6 +12,16 @@ const amount = coffeeStore.amount;
 const weights = coffeeStore.weights;
 
 const goBack = () => { router.push("/blend-ratio"); };
+const confirm = () => {
+    // Get Order
+    const order = coffeeStore.orderObj;
+    
+    // Request Payment to Terminal
+
+    // Loading is on
+
+    router.push("/");
+};
 </script>
 
 <template>
@@ -68,7 +78,8 @@ const goBack = () => { router.push("/blend-ratio"); };
         </el-button>
         <el-button  
         style="width:60vw" 
-        :icon="Check" type="primary" size="large" >
+        :icon="Check" type="primary" size="large" 
+        @click="confirm()">
             Confirm
         </el-button>
     </el-footer>

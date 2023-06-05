@@ -39,6 +39,8 @@ const nextStep = () => {
     });
     
     return {
+      id: item.catalogItemObj.catalogItemObj.id,
+      variationId: item.catalogItemObj.catalogItemObj.itemData.variations[0].id,
       name: item.catalogItemObj.catalogItemObj.itemData.name,
       price: variation.itemVariationData.priceMoney.amount / 100,
       feature: feature
