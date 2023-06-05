@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from "vue";
 import { useRouter } from 'vue-router'
 import { useCoffeeStore } from '../stores/coffeeStore'
 import { ArrowLeft, Check, Money, Goods, ShoppingCart } from '@element-plus/icons-vue';
@@ -11,11 +12,13 @@ const selected = coffeeStore.selected;
 const amount = coffeeStore.amount;
 const weights = coffeeStore.weights;
 
+const displays = computed(()=>selected.filter(item => (item.num ?? 0) > 0));
+
 const goBack = () => { router.push("/blend-ratio"); };
 const confirm = () => {
     // Get Order
     const order = coffeeStore.orderObj;
-    
+
     // Request Payment to Terminal
 
     // Loading is on
@@ -62,7 +65,7 @@ const confirm = () => {
                         Items
                     </div>
                 </template>
-                <span v-for="(item, index) in selected" :key="item.name">
+                <span v-for="(item, index) in displays" :key="item.name">
                     <br v-if="index > 0"/>
                     <el-text size="large">{{ `・ ${item.name} ${item.num}g` }}</el-text>
                 </span>

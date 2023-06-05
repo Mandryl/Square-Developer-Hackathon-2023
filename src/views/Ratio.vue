@@ -102,7 +102,7 @@ const order = () => {
     //  make order
     coffeeStore.updateSelected(selected);
     // store order
-    coffeeStore.updateSelected({});
+    coffeeStore.updateOrder({});
     router.push("/order"); 
 };
 </script>
