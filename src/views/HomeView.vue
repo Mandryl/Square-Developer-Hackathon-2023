@@ -5,68 +5,73 @@ import { useCoffeeStore } from '../stores/coffeeStore'
 import axios from 'axios'
 import { ArrowRight, Money } from '@element-plus/icons-vue'
 
-const router = useRouter();
-const coffeeStore = useCoffeeStore();
+const router = useRouter()
+const coffeeStore = useCoffeeStore()
 
 let catalogItems = ref([])
 let state = reactive({
   selectedItems: [],
   error: null,
   loading: false
-});
+})
 
 let cardOnclick = (itemId) => {
   if (state.selectedItems.includes(itemId)) {
-    state.selectedItems = state.selectedItems.filter((id) => id !== itemId);
+    state.selectedItems = state.selectedItems.filter((id) => id !== itemId)
   } else {
-    state.selectedItems.push(itemId);
+    state.selectedItems.push(itemId)
   }
 }
-let isItemSelected = (id) => computed(() => state.selectedItems.includes(id));
-let hasSelectedItems = computed(() => state.selectedItems && state.selectedItems.length > 0);
+let isItemSelected = (id) => computed(() => state.selectedItems.includes(id))
+let hasSelectedItems = computed(() => state.selectedItems && state.selectedItems.length > 0)
 
 const nextStep = () => {
-  const selected = catalogItems.value.filter(item => 
-    state.selectedItems.includes(item.catalogItemObj.catalogItemObj.id)
-  ).map(item => {
-    const variation = item.catalogItemObj.catalogItemObj.itemData.variations[0];
-    const featureKeys = Object.keys(variation.customAttributeValues).filter(key => key.includes("Square:"));
-    const feature = {};
-    featureKeys.map(key => variation.customAttributeValues[key]).forEach(obj =>{
-      const customeAttrName = obj.name;
-      const customeAttrValue = obj.stringValue;
-      feature[customeAttrName] = customeAttrValue.split(",").map(v=>v.trim());
-    });
-    
-    return {
-      id: item.catalogItemObj.catalogItemObj.id,
-      variationId: item.catalogItemObj.catalogItemObj.itemData.variations[0].id,
-      name: item.catalogItemObj.catalogItemObj.itemData.name,
-      price: variation.itemVariationData.priceMoney.amount / 100,
-      feature: feature
-    }
-  });
-  coffeeStore.updateSelected(selected);
-  router.push("/blend-ratio");
+  const selected = catalogItems.value
+    .filter((item) => state.selectedItems.includes(item.catalogItemObj.catalogItemObj.id))
+    .map((item) => {
+      const variation = item.catalogItemObj.catalogItemObj.itemData.variations[0]
+      const featureKeys = Object.keys(variation.customAttributeValues).filter((key) =>
+        key.includes('Square:')
+      )
+      const feature = {}
+      featureKeys
+        .map((key) => variation.customAttributeValues[key])
+        .forEach((obj) => {
+          const customeAttrName = obj.name
+          const customeAttrValue = obj.stringValue
+          feature[customeAttrName] = customeAttrValue.split(',').map((v) => v.trim())
+        })
+
+      return {
+        itemId: item.catalogItemObj.catalogItemObj.id,
+        itemVarId: item.catalogItemObj.catalogItemObj.itemData.variations[0].id,
+        name: item.catalogItemObj.catalogItemObj.itemData.name,
+        price: variation.itemVariationData.priceMoney.amount / 100,
+        feature: feature
+      }
+    })
+  coffeeStore.updateSelected(selected)
+  router.push('/blend-ratio')
 }
 
 const fetchCatalogItems = async () => {
-  state.loading = true;
+  state.loading = true
   try {
     const response = await axios.get('/api/catalog/items', {
       params: {
         category: 'CoffeeBean'
       }
-    });
+    })
 
     if (response.status === 200) {
-      catalogItems.value = response.data;
+      catalogItems.value = response.data
     }
   } catch (error) {
-    console.error(error);
-    state.error = error.message;
+    console.error(error)
+    catalogItems.value = sampleData
+    state.error = error.message
   } finally {
-    state.loading = false;
+    state.loading = false
   }
 }
 
@@ -75,7 +80,7 @@ onMounted(fetchCatalogItems)
 
 <template>
   <div>
-    <el-main>
+    <el-main v-loading.lock="state.loading" element-loading-text="Catalog is being loaded...">
       <el-breadcrumb :separator-icon="ArrowRight" style="margin-bottom: 15px">
         <el-breadcrumb-item class="active-bread">Select Coffee Beans</el-breadcrumb-item>
         <el-breadcrumb-item class="non-active-bread"
@@ -83,7 +88,7 @@ onMounted(fetchCatalogItems)
         >
         <el-breadcrumb-item class="non-active-bread">Order</el-breadcrumb-item>
       </el-breadcrumb>
-      <el-main v-loading.fullscreen.lock="state.loading">
+      <el-main>
         <el-row :gutter="20" style="margin-bottom: 15px">
           <el-col
             :span="6"
@@ -92,7 +97,7 @@ onMounted(fetchCatalogItems)
             style="margin-bottom: 15px"
           >
             <el-badge
-              value="Select"
+              value="Selected"
               type="primary"
               :hidden="!isItemSelected(item.catalogItemObj.catalogItemObj.id).value"
             >
@@ -138,7 +143,7 @@ onMounted(fetchCatalogItems)
         size="large"
         :disabled="!hasSelectedItems"
         @click="nextStep()"
-        >Next Step</el-button
+        >Next</el-button
       >
     </el-footer>
     <div v-if="state.error">
