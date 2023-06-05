@@ -49,7 +49,7 @@ const evaluate = async () => {
                 name: item.name,
                 feature: item.feature,
             },
-            ratio: item.num / weight
+            ratio: item.num / weight.value
         }
     });
 
