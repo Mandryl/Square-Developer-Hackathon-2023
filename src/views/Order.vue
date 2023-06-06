@@ -65,7 +65,7 @@ const createCheckout = async () => {
           </div>
         </template>
         <el-text size="large">{{
-          `${parseFloat(order.totalMoney.amount) / 100} (tax: ${
+          `$${parseFloat(order.totalMoney.amount) / 100} (tax: $${
             parseFloat(order.totalTaxMoney.amount) / 100
           })`
         }}</el-text>
