@@ -123,8 +123,9 @@ After defining the additional properties, register your item details, which incl
 
 
 ##### Item Example
+
 | Property | Value |
-|:----|:----|:----|
+|:----|:----|
 |Name| Colombia |
 |Category| CoffeeBean |
 |Image| <img src="./bin/script/img/Colombia.png" alt="A picture of Colombia coffee beans" width="100"> |
