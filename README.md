@@ -101,21 +101,21 @@ Set up the units for your items. This application is built with the assumption t
 Establish the tax settings for your products. For more details, refer to this guide on [Managing Your Tax Settings](https://squareup.com/help/us/en/article/5061-create-and-manage-your-tax-settings). Basically, please set with `Sales Taxes`.
 
 ##### Custom Attributes Definition
-Create nine types of flavors as custom attributes. Note that these attributes must be registered individually for each product. The custom properties should align with the [SCAA Flavor Wheel](https://notbadcoffee.com/flavor-wheel-en/).
+Create nine types of flavors as custom attributes. Note that these attributes must be registered individually for each product. Custom attributes should align with the [SCAA Flavor Wheel](https://notbadcoffee.com/flavor-wheel-en/).
 
 Here's the correlation between each item and its property name:
 
-|Flavor Wheel Category| Custom Property Name| Sample(all value in 1 line)|
-|:----|:----|:----|
-|Fruity| Flavor-Wheel-Fruity|lemon,orange|
-|Floral| Flavor-Wheel-Floral|rose, jasmine |
-|Sweet| Flavor-Wheel-Sweet|sugar,honey|
-|Nutty| Flavor-Wheel-Nutty|almond|
-|Spices| Flavor-Wheel-Spices|clove,cinnamon,nutmeg|
-|Roasted| Flavor-Wheel-Roasted|smoky|
-|Sour| Flavor-Wheel-Sour|acid|
-|Green| Flavor-Wheel-Green|vegetable|
-|Other| Flavor-Wheel-Other|bitter|
+|Flavor Wheel Category| Custom Property Name|
+|:----|:----|
+|Fruity| Flavor-Wheel-Fruity|
+|Floral| Flavor-Wheel-Floral|
+|Sweet| Flavor-Wheel-Sweet|
+|Nutty| Flavor-Wheel-Nutty|
+|Spices| Flavor-Wheel-Spices|
+|Roasted| Flavor-Wheel-Roasted|
+|Sour| Flavor-Wheel-Sour|
+|Green| Flavor-Wheel-Green|
+|Other| Flavor-Wheel-Other|
 
 
 #### Items Registration
@@ -139,13 +139,13 @@ After defining the additional properties, register your item details, which incl
 
 | Custom Attribute | Value |
 |:----|:----|
-|Flavor-Wheel-Floral| jasmine, rose |
 |Flavor-Wheel-Fruity| lemon, orange |
-|Flavor-Wheel-Green| None |
-|Flavor-Wheel-Nutty| nutty, toasted almond, hazelnuts, pecan |
-|Flavor-Wheel-Other| harmonious balance |
-|Flavor-Wheel-Roasted| None |
-|Flavor-Wheel-Sour| lively sourness |
-|Flavor-Wheel-Spices| None |
-|Flavor-Wheel-Sweet| toasted marshmallows, caramel, brown sugar, dark chocolate |
+|Flavor-Wheel-Floral| rose, jasmine |
+|Flavor-Wheel-Sweet| sugar,honey |
+|Flavor-Wheel-Nutty| almond |
+|Flavor-Wheel-Spices| love,cinnamon,nutmeg |
+|Flavor-Wheel-Roasted| smoky |
+|Flavor-Wheel-Sour| None |
+|Flavor-Wheel-Green| vegetable |
+|Flavor-Wheel-Other| None |
 
