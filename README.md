@@ -98,7 +98,7 @@ Create a new category for your items. The application is designed to display pro
 Set up the units for your items. This application is built with the assumption that coffee will be sold in `grams`. Therefore, create a new unit and set its precision to `.00`. 
 
 ##### Taxes Definition
-Establish the tax settings for your products. For more details, refer to this guide on [Managing Your Tax Settings](https://squareup.com/help/us/en/article/5061-create-and-manage-your-tax-settings).Basically, please set with `Sales Taxes`.
+Establish the tax settings for your products. For more details, refer to this guide on [Managing Your Tax Settings](https://squareup.com/help/us/en/article/5061-create-and-manage-your-tax-settings). Basically, please set with `Sales Taxes`.
 
 ##### Custom Attributes Definition
 Create nine types of flavors as custom attributes. Note that these attributes must be registered individually for each product. The custom properties should align with the [SCAA Flavor Wheel](https://notbadcoffee.com/flavor-wheel-en/).
@@ -124,7 +124,7 @@ After defining the additional properties, register your item details, which incl
 
 ##### Item Example
 
-| Property | Value |
+| Attribute | Value |
 |:----|:----|
 |Name| Colombia |
 |Category| CoffeeBean |
@@ -137,7 +137,7 @@ After defining the additional properties, register your item details, which incl
 |Custom Attributes | * Listed in the table that follows below |
 
 
-| Key | Values |
+| Custom Attribute | Value |
 |:----|:----|
 |Flavor-Wheel-Floral| jasmine, rose |
 |Flavor-Wheel-Fruity| lemon, orange |
