@@ -9,7 +9,7 @@ These predictions are described in text and images, which use the [GPT API](http
 
 For actual screens of the operation, please check this Youtube video.
 
-[![](https://img.youtube.com/vi/szYAryVjdro/0.jpg)](https://www.youtube.com/watch?v=szYAryVjdro)
+[![](https://img.youtube.com/vi/GtTgbXhxfWE/0.jpg)](https://youtu.be/GtTgbXhxfWE)
 
 ## Execution of Project
 
