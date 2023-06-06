@@ -9,6 +9,8 @@ These predictions are described in text and images, which use the [GPT API](http
 
 For actual screens of the operation, please check this Youtube video.
 
+[![](https://img.youtube.com/vi/szYAryVjdro/0.jpg)](https://www.youtube.com/watch?v=szYAryVjdro)
+
 ## Execution of Project
 
 This application is a Node.js app and consists of OSS such as Vue3, Vite, and Express.
